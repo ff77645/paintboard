@@ -7,8 +7,24 @@ export default class Painter {
         this.paths = paths
     }
     gNum(num){
-
+        return this.px * num
     }
+
+    drawImage(d){
+        const {
+            dx,
+            dy,
+            dWidth,
+            dHeight,
+            // sx,
+            // sy,
+            // sWidth,
+            // sHeight,
+        } = d.style
+        this.ctx.drawImage(d.image,dx,dy,dWidth,dHeight)
+        this.ctx.draw(true)
+    }
+
     drawRect(d){
         console.log('drawRect',d)
         const {
@@ -20,7 +36,7 @@ export default class Painter {
         } = d.style
         this.ctx.save()
         this.ctx.fillStyle = backgroundColor
-        this.ctx.rect(left,top,width,height)
+        this.ctx.rect(this.gNum(left),this.gNum(top),this.gNum(width),this.gNum(height))
         this.ctx.fill()
         this.ctx.draw()
         this.ctx.restore()

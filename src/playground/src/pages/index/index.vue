@@ -23,6 +23,17 @@ const paths = [
     Children:[
 
     ]
+  },
+  {
+    type:'image',
+    image:'http://pic.yupoo.com/isfy666/94184a1f/945dfe1e.jpeg',
+    style:{
+      dx:100,
+      dy:100,
+      dWidth:200,
+      dHeight:200,
+      round:6,
+    }
   }
 ]
 
